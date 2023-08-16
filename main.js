@@ -27,7 +27,7 @@ function buscarAutos() {
     }
   });
 
-  if (autosEncontrados.length > 0) {
+ if (autosEncontrados.length > 0) {
     console.log('Autos encontrados:');
     autosEncontrados.forEach(auto => {
       console.log(`Marca: ${auto.marca}, Modelo: ${auto.modelo}, Año: ${auto.año}, Precio: ${auto.precio}`);
@@ -35,13 +35,7 @@ function buscarAutos() {
   } else {
     console.log('No se encontraron autos con ese modelo o marca.');
   }
-}
-
-// boton para buscar autos
-let buscarBtn = document.getElementById('btn');
-buscarBtn.addEventListener('click', buscarAutos);
-
-
+} 
 
 //Funcion para agregar agregar auto 
 
@@ -65,3 +59,18 @@ function agregarAuto() {
 let boton = document.getElementById("btn1")
 boton.addEventListener("click", agregarAuto)
 
+// boton para buscar autos
+let buscarBtn = document.getElementById('btn');
+buscarBtn.addEventListener('click', buscarAutos);
+
+//mostrando en pantalla
+
+
+
+//almacenando en el local storage
+
+if (localStorage.getItem("Autos")) {
+  lista = JSON.parse(localStorage.getItem("Autos"));
+} else {
+  listaAutos = listaAutos
+}
